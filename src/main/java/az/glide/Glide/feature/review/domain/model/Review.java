@@ -20,4 +20,8 @@ public class Review {
 
     @ManyToOne(fetch = FetchType.EAGER)
     private Place place;
+
+    private Integer userId;
+
+    private float review;
 }

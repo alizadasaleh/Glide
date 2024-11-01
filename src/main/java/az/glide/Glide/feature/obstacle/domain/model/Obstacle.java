@@ -1,6 +1,7 @@
 package az.glide.Glide.feature.obstacle.domain.model;
 
 import az.glide.Glide.feature.common.GeoJson;
+import az.glide.Glide.feature.common.MapObject;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -15,17 +16,11 @@ import org.hibernate.type.SqlTypes;
 @AllArgsConstructor
 @Entity
 @Table(name = "Obstacles")
-public class Obstacle {
+public class Obstacle extends MapObject {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    private ObstacleType type;
 
-    private Float latitude;
-    private Float longitude;
-
-    private String address;
-
-    @JdbcTypeCode(SqlTypes.JSON)
-    private GeoJson geoJson;
 }
