@@ -1,6 +1,5 @@
 package az.glide.Glide.feature.place.application.facade.impl;
 
-import az.glide.Glide.exception.ResourceNotFoundException;
 import az.glide.Glide.feature.place.application.facade.PlaceFacade;
 import az.glide.Glide.feature.place.application.mapper.PlaceMapper;
 import az.glide.Glide.feature.place.application.model.request.CreatePlaceRequest;
@@ -37,7 +36,7 @@ public class PlaceFacadeImpl implements PlaceFacade {
         var existingPlace = placeService.get(id);
 
         if (existingPlace.isEmpty()) {
-            throw new ResourceNotFoundException("Place with id " + id + " does not exist");
+            throw new RuntimeException("Place with id " + id + " does not exist");
         }
 
        placeModel.setId(id);
@@ -52,7 +51,7 @@ public class PlaceFacadeImpl implements PlaceFacade {
         var existingPlace = placeService.get(id);
 
         if (existingPlace.isEmpty()) {
-            throw new ResourceNotFoundException("Place with id " + id + " does not exist");
+            throw new RuntimeException("Place with id " + id + " does not exist");
         }
 
         var place = existingPlace.get();
@@ -74,7 +73,7 @@ public class PlaceFacadeImpl implements PlaceFacade {
         var existingPlace = placeService.get(id);
 
         if (existingPlace.isEmpty()) {
-            throw new ResourceNotFoundException("Place with id " + id + " does not exist");
+            throw new RuntimeException("Place with id " + id + " does not exist");
         }
 
        placeService.delete(id);
