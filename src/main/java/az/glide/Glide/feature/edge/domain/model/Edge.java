@@ -17,16 +17,17 @@ public class Edge {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(unique = true)
+    private Long publicId;
+
     @Embedded
     @AttributeOverrides({
-            @AttributeOverride(name = "id", column = @Column(name = "source_id")),
             @AttributeOverride(name = "latitude", column = @Column(name = "source_latitude")),
             @AttributeOverride(name = "longitude", column = @Column(name = "source_longitude"))
     })
     private Node source;
 
     @AttributeOverrides({
-            @AttributeOverride(name = "id", column = @Column(name = "target_id")),
             @AttributeOverride(name = "latitude", column = @Column(name = "target_latitude")),
             @AttributeOverride(name = "longitude", column = @Column(name = "target_longitude"))
     })
@@ -41,8 +42,7 @@ public class Edge {
     @NoArgsConstructor
     @AllArgsConstructor
     @Embeddable
-    private static class Node {
-        private  Long id;
+    public static class Node {
         private Float latitude;
         private Float longitude;
     }
