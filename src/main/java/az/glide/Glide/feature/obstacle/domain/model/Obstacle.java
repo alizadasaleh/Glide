@@ -1,4 +1,4 @@
-package az.glide.Glide.feature.place.domain.model;
+package az.glide.Glide.feature.obstacle.domain.model;
 
 import az.glide.Glide.feature.common.GeoJson;
 import jakarta.persistence.*;
@@ -14,11 +14,12 @@ import org.hibernate.type.SqlTypes;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "places")
-public class Place {
+@Table(name = "Obstacles")
+public class Obstacle {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
 
     private Float latitude;
     private Float longitude;
@@ -27,6 +28,4 @@ public class Place {
 
     @JdbcTypeCode(SqlTypes.JSON)
     private GeoJson geoJson;
-
-
 }
