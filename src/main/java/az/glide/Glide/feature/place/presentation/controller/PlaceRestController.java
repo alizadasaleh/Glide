@@ -15,7 +15,7 @@ import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("api/v1/Places")
+@RequestMapping("api/v1/places")
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 public class PlaceRestController {
     private final PlaceFacade placeFacade;

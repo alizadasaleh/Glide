@@ -15,7 +15,7 @@ import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("api/v1/Obstacles")
+@RequestMapping("api/v1/obstacles")
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 public class ObstacleRestController {
     private final ObstacleFacade obstacleFacade;

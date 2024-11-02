@@ -15,7 +15,7 @@ import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("api/v1/Edges")
+@RequestMapping("api/v1/edges")
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 public class EdgeRestController {
     private final EdgeFacade edgeFacade;
