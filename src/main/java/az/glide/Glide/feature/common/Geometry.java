@@ -7,6 +7,6 @@ import java.util.List;
 @Data
 public class Geometry {
     private String type;
-    private List<Double> coordinates;
+    private List<List<Double>> coordinates;
 
 }

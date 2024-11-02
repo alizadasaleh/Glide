@@ -31,11 +31,14 @@ public class EdgeServiceImpl implements EdgeService {
 
     @Override
     public List<Edge> getAll() {
-        return edgeRepository.findAll();
+        return edgeRepository.findEdgesWithinArea(40.37893920515291f, 49.82907878582189f,40.375665106119655f,
+                49.85988933183643f);
     }
 
     @Override
     public void delete(Long id) {
        edgeRepository.deleteById(id);
     }
+
+
 }

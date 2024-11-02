@@ -10,6 +10,7 @@ import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
 import org.hibernate.annotations.JdbcTypeCode;
+import org.hibernate.annotations.Type;
 import org.hibernate.type.SqlTypes;
 
 @Data
@@ -24,7 +25,12 @@ public class Obstacle extends Auditable<String> {
 
     private ObstacleType type;
 
-    @Embedded
-    private MapObject mapObject;
+    private Float latitude;
+    private Float longitude;
+
+    private String address;
+
+    @Column(columnDefinition = "TEXT")
+    private String geoJson;
 
 }

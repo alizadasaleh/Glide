@@ -7,6 +7,7 @@ import az.glide.Glide.feature.obstacle.application.model.response.GetObstacleRes
 import az.glide.Glide.feature.obstacle.application.model.response.UpdateObstacleResponse;
 import az.glide.Glide.feature.obstacle.domain.model.Obstacle;
 import org.mapstruct.Mapper;
+import org.mapstruct.Mapping;
 
 @Mapper(componentModel = "spring")
 public interface ObstacleMapper {

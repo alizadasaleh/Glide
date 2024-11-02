@@ -31,7 +31,7 @@ public class EdgeFacadeImpl implements EdgeFacade {
 
     @Override
     public UpdateEdgeResponse update(Long id, UpdateEdgeRequest request) {
-        var edgeModel = edgeMapper.toModel(request);
+            var edgeModel = edgeMapper.toModel(request);
 
         var existingEdge = edgeService.get(id);
 
@@ -46,7 +46,7 @@ public class EdgeFacadeImpl implements EdgeFacade {
 
         edgeModel.setId(id);
 
-        var edge = edgeService.create(edgeModel);
+        var edge = edgeService.update(edgeModel);
 
         return edgeMapper.toUpdateResponse(edge);
     }
