@@ -1,5 +1,6 @@
     package az.glide.Glide.feature.edge.domain.model;
 
+import az.glide.Glide.feature.common.Auditable;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -12,7 +13,7 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @Entity
 @Table(name = "Edges")
-public class Edge {
+public class Edge extends Auditable<String> {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -22,12 +23,14 @@ public class Edge {
 
     @Embedded
     @AttributeOverrides({
+            @AttributeOverride(name = "id", column = @Column(name = "source_id")),
             @AttributeOverride(name = "latitude", column = @Column(name = "source_latitude")),
             @AttributeOverride(name = "longitude", column = @Column(name = "source_longitude"))
     })
     private Node source;
 
     @AttributeOverrides({
+            @AttributeOverride(name = "id", column = @Column(name = "target_id")),
             @AttributeOverride(name = "latitude", column = @Column(name = "target_latitude")),
             @AttributeOverride(name = "longitude", column = @Column(name = "target_longitude"))
     })
@@ -43,6 +46,7 @@ public class Edge {
     @AllArgsConstructor
     @Embeddable
     public static class Node {
+        private Long id;
         private Float latitude;
         private Float longitude;
     }

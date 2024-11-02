@@ -1,5 +1,6 @@
 package az.glide.Glide.feature.review.domain.model;
 
+import az.glide.Glide.feature.common.Auditable;
 import az.glide.Glide.feature.place.domain.model.Place;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -13,7 +14,7 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @Entity
 @Table(name = "Reviews")
-public class Review {
+public class Review extends Auditable<String> {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

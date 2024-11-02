@@ -1,5 +1,6 @@
 package az.glide.Glide.feature.obstacle.domain.model;
 
+import az.glide.Glide.feature.common.Auditable;
 import az.glide.Glide.feature.common.GeoJson;
 import az.glide.Glide.feature.common.MapObject;
 import jakarta.persistence.*;
@@ -16,11 +17,14 @@ import org.hibernate.type.SqlTypes;
 @AllArgsConstructor
 @Entity
 @Table(name = "Obstacles")
-public class Obstacle extends MapObject {
+public class Obstacle extends Auditable<String> {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private ObstacleType type;
+
+    @Embedded
+    private MapObject mapObject;
 
 }
