@@ -19,7 +19,7 @@ public class Edge extends Auditable<String> {
     private Long id;
 
     @Column(unique = true)
-    private Long publicId;
+    private Long osmId;
 
     @Embedded
     @AttributeOverrides({

@@ -6,7 +6,7 @@ import lombok.Data;
 
 @Data
 public class UpdateEdgeRequest {
-    private Long publicId;
+    private Long osmId;
 
     private Edge.Node source;
     private Edge.Node target;

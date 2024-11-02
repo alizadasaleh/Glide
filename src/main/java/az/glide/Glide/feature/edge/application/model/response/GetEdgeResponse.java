@@ -8,7 +8,7 @@ import lombok.Data;
 public class GetEdgeResponse {
     private Long id;
 
-    private Long publicId;
+    private Long osmId;
 
     private Edge.Node source;
     private Edge.Node target;
