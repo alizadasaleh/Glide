@@ -26,8 +26,13 @@ public class Place extends Auditable<String> {
 
     private String wheelchairDescription;
 
-    @Embedded
-    private MapObject mapObject;
+    private Float latitude;
+    private Float longitude;
+
+    private String address;
+
+    @Column(columnDefinition = "TEXT")
+    private String geoJson; //optional
 
 
 }
