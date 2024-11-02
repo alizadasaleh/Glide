@@ -35,11 +35,16 @@ public class EdgeFacadeImpl implements EdgeFacade {
 
         var existingEdge = edgeService.get(id);
 
+
         if (existingEdge.isEmpty()) {
             throw new RuntimeException("Edge with id " + id + " does not exist");
         }
 
-       edgeModel.setId(id);
+        edgeModel.setTarget(existingEdge.get().getTarget());
+        edgeModel.setSource(existingEdge.get().getSource());
+        edgeModel.setOsmId(existingEdge.get().getOsmId());
+
+        edgeModel.setId(id);
 
         var edge = edgeService.create(edgeModel);
 

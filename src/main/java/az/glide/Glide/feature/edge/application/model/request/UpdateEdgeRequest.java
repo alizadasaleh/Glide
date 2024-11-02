@@ -6,11 +6,6 @@ import lombok.Data;
 
 @Data
 public class UpdateEdgeRequest {
-    private Long osmId;
-
-    private Edge.Node source;
-    private Edge.Node target;
-
     private Float slope;
 
     private Ramp ramp;

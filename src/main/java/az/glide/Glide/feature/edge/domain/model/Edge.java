@@ -18,7 +18,6 @@ public class Edge extends Auditable<String> {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(unique = true)
     private Long osmId;
 
     @Embedded
