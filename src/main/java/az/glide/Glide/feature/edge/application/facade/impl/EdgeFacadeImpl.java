@@ -83,4 +83,14 @@ public class EdgeFacadeImpl implements EdgeFacade {
 
        edgeService.delete(id);
     }
+
+    @Override
+    public List<GetEdgeResponse> getAllAll() {
+        var result = edgeService.getAllAll();
+
+        return result.stream()
+                .map(edgeMapper::toGetResponse)
+                .toList();
+
+    }
 }

@@ -15,4 +15,6 @@ public interface EdgeService {
     List<Edge> getAll();
 
     void delete(Long id);
+
+    List<Edge> getAllAll();
 }

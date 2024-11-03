@@ -40,5 +40,10 @@ public class EdgeServiceImpl implements EdgeService {
        edgeRepository.deleteById(id);
     }
 
+    @Override
+    public List<Edge> getAllAll() {
+        return edgeRepository.findAll();
+    }
+
 
 }

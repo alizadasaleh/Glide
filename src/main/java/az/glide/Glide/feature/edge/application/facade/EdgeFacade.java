@@ -18,4 +18,6 @@ public interface EdgeFacade {
     List<GetEdgeResponse> getAll();
 
     void delete(Long id);
+
+    List<GetEdgeResponse> getAllAll();
 }

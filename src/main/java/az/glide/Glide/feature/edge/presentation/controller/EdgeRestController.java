@@ -27,6 +27,14 @@ public class EdgeRestController {
         return ResponseEntity.ok(response);
     }
 
+
+    @GetMapping("/all")
+    public ResponseEntity<List<GetEdgeResponse>> getAll() {
+        var response = edgeFacade.getAllAll();
+
+        return ResponseEntity.ok(response);
+    }
+
     @GetMapping("/{id}")
     public ResponseEntity<GetEdgeResponse> get(@PathVariable("id") Long id) {
         var response = edgeFacade.get(id);
